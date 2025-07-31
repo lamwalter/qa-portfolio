@@ -1,3 +1,5 @@
+git commit -m "CRM-8 forgot_password_bug.md"
+
 # Bug Report: Forgot Password Redirect
 
 **Bug ID:** BUG-001  
