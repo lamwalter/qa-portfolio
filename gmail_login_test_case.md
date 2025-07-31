@@ -20,7 +20,8 @@ git commit -m "CRM-10 gmail_login_test_case.md"
 - User is redirected to the Gmail inbox
 
 ## Actual Result:
-- TBD (manual execution)
+- User successfully redirected to Gmail inbox.
 
 ## Status:
-- Pass / Fail (mark after testing)
+- Pass
+
