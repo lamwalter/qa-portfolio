@@ -1,3 +1,5 @@
+git commit -m "CRM-7 login_button_bug.md"
+
 # Bug: Login Button Does Nothing
 
 **Bug ID:** BUG-001  
