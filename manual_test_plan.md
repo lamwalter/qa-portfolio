@@ -1,15 +1,14 @@
-
-#### 🔧 Action:
-📁 Save this as `bug_report_001.md` in your GitHub repo under `/qa-docs/bug-reports`.
-
----
-
-### ✅ **2. Start Manual Test Plan Doc in GitHub**
-
-Here’s a minimal starting template:
-
-```markdown
 # 🧪 Manual Test Plan – Todo List Web App
+
+# 🧪 Manual Test Plan – Todo List Web App
+
+## 🔗 Jira References
+- Test Case: [CRM-14 – Task Deletion Test Case](https://walterqa.atlassian.net/browse/CRM-14)
+- Bug Report: [CRM-13 – App crashes on past-due delete](https://walterqa.atlassian.net/browse/CRM-13)
+
+## 📦 Scope
+Manual test plan for functional, usability, and UI testing.
+
 
 ## 📦 Scope
 Manual test plan for functional, usability, and UI testing.
@@ -29,17 +28,4 @@ Manual test plan for functional, usability, and UI testing.
 - [ ] Delete normal task
 - [ ] Delete overdue task
 - [ ] Cancel deletion
-
-## 🧩 Edge Cases
-- [ ] Task with emoji/title in different language
-- [ ] Task created and deleted in under 2 seconds
-
-## 👁️ UI Checks
-- [ ] Responsive design on mobile
-- [ ] Button states (disabled/enabled, hover)
-
----
-
-### 🛠️ Tools
-- Chrome Dev Tools
-- Postman (for API endpoints)
+...
