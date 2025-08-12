@@ -1,9 +1,20 @@
 # Bug Reports Index
 
-- [BUG-001 – Login button not working](./bug-001-login-button-not-working.md)
-- [BUG-002 – Add to cart appears successful but cart is empty](./bug-002-add-to-cart-empty-cart.md)
+## Summary
+- **Total:** 2 · **Open:** 2 · **Closed:** 0
+
+## List
+| ID      | Title                                                                 | Status | Severity | Priority | Date       |
+|---------|------------------------------------------------------------------------|--------|----------|----------|------------|
+| BUG-001 | [Login button not working](./bug-001-login-button-not-working.md)     | Open   | High     | P1       | 2025-08-05 |
+| BUG-002 | [Add to cart success but cart is empty](./bug-002-add-to-cart-empty-cart.md) | Open   | Medium   | P2       | 2025-08-06 |
 
 ## Conventions
-- **Severity:** Blocker > Critical > High > Medium > Low
-- **Priority:** P0 (immediate) … P3 (backlog)
-- Template: see `qa-docs/bug-report-template.md` (or use any file here as a base)
+- **Severity:** Blocker > Critical > High > Medium > Low  
+- **Priority:** P0 (immediate) … P3 (backlog)  
+- **Template:** Use any existing bug file as a base, or create `qa-docs/bug-report-template.md`.
+
+## How to add a new bug
+1. Create `bug-reports/bug-XXX-short-title.md`
+2. Fill in: Summary · Steps · Expected · Actual · Environment · Severity · Priority · Attachments · Notes
+3. Add a new row in the **List** table above.
