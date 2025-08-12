@@ -46,7 +46,7 @@ The cart page is empty. No items are displayed.
 ---
 
 ## 📎 Attachments
-- Screenshot: `bug-002.png`
+- Screenshot: ![BUG-002](./assets/BUG-002/bug-002.png)
 
 ---
 
