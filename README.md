@@ -18,6 +18,8 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
 - 🧾 **QA Docs / Checklists:** [`./qa-docs/`](./qa-docs/)
   - [Test Case Template](./qa-docs/test-case-template.md)
   - [Test Summary Template](./qa-docs/test-summary-template.md)
+  - [Portfolio Screens (Aug 2025)](./qa-docs/portfolio-screens/2025-08/)
+
 - 📊 **Test Summaries:** [`./test-summaries/`](./test-summaries/)
   - [Login Cycle 01 (Aug 2025)](./test-summaries/2025-08-login-cycle-01.md)
 
