@@ -1,21 +1,25 @@
-# Test Case — LOGIN-013 — Gmail OAuth Login
+# Test Case — LOGIN-014 — YouTube OAuth Login
 
 **Module:** Authentication → Login (OAuth)  
 **Owner:** Walter Lam  
 **Priority:** P2  
-**Preconditions:** Google account available; OAuth client configured.
+**Preconditions:** YouTube/Google account available; OAuth client configured with correct redirect URI.
 
 ## Steps
-1. Click **Login with Google**.
-2. Select a valid Google account.
-3. Approve consent if prompted.
+1. On `/login`, click **Continue with YouTube**.
+2. In the Google/YouTube consent screen, select a valid account.
+3. Approve requested permissions (if prompted).
+4. Complete the redirect back to the application.
 
 ## Test Data
-- Google account: `test.user@gmail.com`
+- Google/YouTube account: `test.user@gmail.com`
 
 ## Expected Result
-- User is redirected back and logged in.
-- Session cookie set; profile shows Google-linked email.
+- App receives authorization code → exchanges for access token.
+- User is logged in and redirected to `/dashboard`.
+- Profile shows `YouTube/Google`-linked identity (email or name).
+- Session cookie set (HttpOnly, Secure); CSRF token present as applicable.
+- No stack traces or OAuth errors in console/network.
 
 ## Actual Result
 _TBD_
@@ -25,6 +29,7 @@ _TBD_
 
 ## Notes / Links
 - Related bugs: —
+- Network: Verify 302 to OAuth provider and 200 on callback route.
 
 git commit -m "CRM-12 youtube_login_test_case.md"
 
