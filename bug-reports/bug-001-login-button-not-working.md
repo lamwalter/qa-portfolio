@@ -44,7 +44,7 @@ Nothing happens. No error message is shown. No page reload or redirect occurs.
 ---
 
 ## 📎 Attachments
-- Screenshot: `bug-001.png`
+- Screenshot: ![BUG-001](./assets/BUG-001/bug-001.png)
 
 ---
 
