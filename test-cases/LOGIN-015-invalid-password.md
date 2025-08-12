@@ -1,21 +1,25 @@
-# Test Case — LOGIN-013 — Gmail OAuth Login
+# Test Case — LOGIN-015 — Invalid Password Handling
 
-**Module:** Authentication → Login (OAuth)  
+**Module:** Authentication → Login  
 **Owner:** Walter Lam  
-**Priority:** P2  
-**Preconditions:** Google account available; OAuth client configured.
+**Priority:** P1  
+**Preconditions:** Existing active user account.
 
 ## Steps
-1. Click **Login with Google**.
-2. Select a valid Google account.
-3. Approve consent if prompted.
+1. Go to `/login`.
+2. Enter a valid email and an **incorrect** password.
+3. Click **Login**.
 
 ## Test Data
-- Google account: `test.user@gmail.com`
+- Email: `valid.user@example.com`
+- Password: `WrongPass!234`
 
 ## Expected Result
-- User is redirected back and logged in.
-- Session cookie set; profile shows Google-linked email.
+- User is **not** logged in; remains on login page.
+- Clear error message shown (e.g., “Email or password is incorrect.”) without revealing which field was wrong.
+- No session/cookies created; rate limiter increments failed-attempt counter.
+- No stack traces in UI/console; no sensitive info in responses.
+- (If lockout policy exists) failed-attempts count increases toward threshold.
 
 ## Actual Result
 _TBD_
@@ -24,7 +28,7 @@ _TBD_
 ☐ Pass ☐ Fail ☐ Blocked
 
 ## Notes / Links
-- Related bugs: —
+- Related bugs: consider linking to BUG-001 if messaging/redirect issues reoccur.
 
 git commit -m "CRM-11 invalid_password_test_case.md"
 
