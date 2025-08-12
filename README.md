@@ -48,3 +48,9 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
 ---
 
 ## 📁 Folder Structure
+qa-portfolio/
+├─ bug-reports/        # Individual defect reports (Markdown)
+├─ manual-qa/          # Plans, workflows, SOPs
+├─ qa-docs/            # Checklists, summaries, templates
+├─ test-cases/         # Manual test cases
+└─ README.md
