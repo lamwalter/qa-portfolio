@@ -57,3 +57,8 @@ Brief summary of the application under test (AUT), purpose of testing.
 | Name        | Role        | Signature |
 |-------------|-------------|-----------|
 | Walter Lam  | QA Engineer |           |
+
+## 11. Traceability
+- Test Cases: `test-cases/LOGIN-001-012-login-feature-suite.md`
+- Bug Reports: `bug-reports/`
+- Test Summary: `test-summaries/2025-08-login-cycle-01.md`
