@@ -1,0 +1,19 @@
+Test: BUG-003 — Unlimited login attempts (no rate limit/lockout)
+Date: 2025-08-12
+Env: Windows 11, Chrome 126 (64-bit)
+Target: demo-app/login.html (portfolio demo page; posts to httpbin 200)
+
+Procedure:
+- Performed repeated wrong-password attempts using the same valid email.
+- DevTools → Network: Preserve log ON, Disable cache ON.
+
+Attempts:
+- Total attempts: ~20 within ~3 minutes
+- Network results: all responses 200 OK
+- No 429 status codes observed
+- No rate-limit headers present (e.g., Retry-After, X-RateLimit-*)
+- UI message remained: “Email or password is incorrect.”
+- No CAPTCHA or lockout banner appeared.
+
+Conclusion:
+- No throttling/lockout observed. System allows rapid, unlimited failed attempts → brute-force risk.
