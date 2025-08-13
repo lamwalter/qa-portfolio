@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Demo Login (No Rate Limit)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 48px; }
+    .card { max-width: 380px; border: 1px solid #ddd; border-radius: 12px; padding: 20px; }
+    label { display:block; margin-top:12px; font-weight:600; }
+    input { width:100%; padding:10px; margin-top:6px; border:1px solid #ccc; border-radius:8px; }
+    button { margin-top:16px; padding:10px 14px; border:0; border-radius:8px; cursor:pointer; }
+    .primary { background:#1f6feb; color:white; }
+    .muted { color:#666; font-size:14px; margin-top:10px; }
+    .error { color:#b00020; margin-top:10px; }
+  </style>
+</head>
+<body>
+  <h1>Demo Login</h1>
+  <p class="muted">This page intentionally <strong>does not</strong> throttle or lock out failed attempts. Use only for portfolio testing.</p>
+
+  <div class="card">
+    <form id="loginForm">
+      <label>Email</label>
+      <input id="email" type="email" placeholder="you@example.com" required />
+
+      <label>Password</label>
+      <input id="password" type="password" placeholder="••••••••" required />
+
+      <button class="primary" type="submit">Login</button>
+      <div id="msg" class="error" aria-live="polite"></div>
+    </form>
+  </div>
+
+  <script>
+    // Always "fails" the login but still sends a network request that returns 200 OK.
+    // We hit httpbin.org which simply echoes or returns a status code.
+    const ENDPOINT = "https://httpbin.org/status/200";
+
+    document.getElementById("loginForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // Fire a POST request so it shows up in Network as a login-like call.
+      try {
+        await fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password })
+        });
+        // Always show a generic error (no rate limit, no captcha).
+        document.getElementById("msg").textContent = "Email or password is incorrect.";
+        console.log("Demo login attempt sent, always 200.");
+      } catch (err) {
+        document.getElementById("msg").textContent = "Network error (demo).";
+      }
+    });
+  </script>
+</body>
+</html>
