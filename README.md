@@ -10,6 +10,7 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
   - BUG-001 — [Login button not working](./bug-reports/bug-001-login-button-not-working.md)
   - BUG-002 — [Add to cart appears successful but cart is empty](./bug-reports/bug-002-add-to-cart-empty-cart.md)
   - BUG-003 — [Unlimited login attempts (no rate limit/lockout)](./bug-reports/bug-003-unlimited-login-attempts-no-rate-limit.md)
+  - BUG-004 — [Forgot password link returns 404](./bug-reports/bug-004-forgot-password-404.md)
 
 - **Test Cases:** [`./test-cases/`](./test-cases/)
   - [Login Feature — Suite (LOGIN-001…012)](./test-cases/LOGIN-001-012-login-feature-suite.md)
