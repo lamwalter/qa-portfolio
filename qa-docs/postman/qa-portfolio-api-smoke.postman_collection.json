@@ -1,0 +1,59 @@
+{
+  "info": {
+    "name": "QA Portfolio — API Smoke",
+    "_postman_id": "a1111111-b222-4c33-8d44-eeeeeeeeeeee",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET {{baseUrl}}/users/2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/users/2", "host": ["{{baseUrl}}"], "path": ["users","2"] }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"status is 200\", () => pm.response.to.have.status(200));",
+              "pm.test(\"content-type is json\", () => pm.response.to.have.header(\"Content-Type\"));",
+              "pm.test(\"responds within 1500ms\", () => pm.expect(pm.response.responseTime).to.be.below(1500));",
+              "const json = pm.response.json();",
+              "pm.test(\"has user id 2\", () => pm.expect(json.data && json.data.id).to.eql(2));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "POST {{baseUrl}}/users",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Walter QA\",\n  \"job\": \"tester\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/users", "host": ["{{baseUrl}}"], "path": ["users"] }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"status is 201\", () => pm.response.to.have.status(201));",
+              "const json = pm.response.json();",
+              "pm.test(\"returns id\", () => pm.expect(json.id).to.be.a(\"string\"));",
+              "pm.test(\"returns createdAt\", () => pm.expect(json.createdAt).to.be.a(\"string\"));"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "variable": []
+}
