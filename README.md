@@ -4,13 +4,13 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
 
 ---
 
-## 🗂️ Portfolio Map
+## 📚 Portfolio Map
 
 - **Bug Reports:** [`./bug-reports/`](./bug-reports/)
-  - BUG-001 — [Login button not working](./bug-reports/bug-001-login-button-not-working.md)
-  - BUG-002 — [Add to cart appears successful but cart is empty](./bug-reports/bug-002-add-to-cart-empty-cart.md)
-  - BUG-003 — [Unlimited login attempts (no rate limit/lockout)](./bug-reports/bug-003-unlimited-login-attempts-no-rate-limit.md)
-  - BUG-004 — [Forgot password link returns 404](./bug-reports/bug-004-forgot-password-404.md)
+  - **BUG-001 —** [Login button not working](./bug-reports/bug-001-login-button-not-working.md)
+  - **BUG-002 —** [Add to cart appears successful but cart is empty](./bug-reports/bug-002-add-to-cart-empty-cart.md)
+  - **BUG-003 —** [Unlimited login attempts (no rate limit/lockout)](./bug-reports/bug-003-unlimited-login-attempts-no-rate-limit.md)
+  - **BUG-004 —** [Forgot password link returns 404](./bug-reports/bug-004-forgot-password-404.md)
 
 - **Test Cases:** [`./test-cases/`](./test-cases/)
   - [Login Feature — Suite (LOGIN-001…012)](./test-cases/LOGIN-001-012-login-feature-suite.md)
@@ -34,10 +34,10 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
 - **Test Summaries:** [`./test-summaries/`](./test-summaries/)
   - [Login Cycle 01 (Aug 2025)](./test-summaries/2025-08-login-cycle-01.md)
 
-
 ---
 
-## 🔄 Testing Workflow (Manual)
+## 🧪 Testing Workflow (Manual)
+
 1. Write **test cases** in Markdown and save to `test-cases/`.
 2. Execute tests; update each case with **Actual Result** and **Status** (Pass/Fail/Blocked).
 3. Log defects as **Bug Reports** in `bug-reports/` with clear steps, expected vs actual, and environment.
@@ -47,14 +47,16 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
 ---
 
 ## 🐞 Bug Report Conventions
+
 - **Filename:** `bug-###-short-title.md` (e.g., `bug-002-add-to-cart-empty-cart.md`)
 - **Fields:** Summary • Steps to Reproduce • Expected • Actual • Environment • Severity • Priority • Attachments • Notes
-- **Severity:** Blocker > Critical > **High** > Medium > Low  
-- **Priority:** **P1** (urgent) > P2 > P3
+- **Severity:** Blocker › Critical › High › Medium › Low
+- **Priority:** P1 (urgent) › P2 › P3
 
 ---
 
 ## ✅ Test Case Conventions
+
 - **ID:** `FEATURE-###` (e.g., `LOGIN-001`)
 - **Fields:** Title • Preconditions • Steps • **Data** • Expected • Actual • Status • Notes
 - Keep steps **atomic** (one action per step) and expected results **observable**.
@@ -62,14 +64,16 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
 ---
 
 ## 📊 Progress (QA Portfolio)
+
 - Test Plan: ✅ (template committed)
-- Bug Reports: 4 / 10 (target) — 🟡 in progress
-- Test Cases: **9 / 12 (target)** — 🟠 building
+- Bug Reports: **4 / 10** (target) — 🟡 in progress
+- Test Cases: **9 / 12** (target) — 🟠 building
 - Test Summary Docs: **1 / 3** — 🟥 drafted
 
 ---
 
 ## 📁 Folder Structure
+
     qa-portfolio/
     ├─ bug-reports/        # Individual defect reports (Markdown)
     ├─ manual-qa/          # Plans, workflows, SOPs
