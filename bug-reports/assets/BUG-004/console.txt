@@ -1,0 +1,11 @@
+Page: /login → Forgot Password
+Context: Local demo app (file://[local], no public URL)
+Date: 2025-08-13 23:24 PT
+Browser: Chrome 126 (Windows 11)
+
+Action:
+- Clicked "Forgot password" on /login
+
+Console / Network:
+- GET /forgot → 404 (Not Found)
+- No JS runtime errors observed
