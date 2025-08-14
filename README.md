@@ -63,7 +63,7 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
 
 ## 📊 Progress (QA Portfolio)
 - Test Plan: ✅ (template committed)
-- Bug Reports: **3 / 10 (target)** — 🟡 in progress
+- Bug Reports: 4 / 10 (target) — 🟡 in progress
 - Test Cases: **9 / 12 (target)** — 🟠 building
 - Test Summary Docs: **1 / 3** — 🟥 drafted
 
