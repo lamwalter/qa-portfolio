@@ -10,3 +10,9 @@
 1. Import the environment and collection into Postman.
 2. Select **ReqRes (Demo)** environment.
 3. Send both requests or use the Collection Runner.
+
+## CLI (Newman)
+
+Install once:
+```bash
+npm i -g newman newman-reporter-html
