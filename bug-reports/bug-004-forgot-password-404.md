@@ -46,7 +46,7 @@ Browser shows a **404 Not Found** page. No reset form is available.
 
 ## 📎 Attachments
 - Screenshot: ![BUG-004](./assets/BUG-004/bug-004.png)
-- Console/Notes (optional): [`console.txt`](./assets/BUG-004/console.txt)
+- Console: [`console.txt`](./assets/BUG-004/console.txt)
 
 ---
 
