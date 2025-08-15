@@ -16,3 +16,5 @@
 Install once:
 ```bash
 npm i -g newman newman-reporter-html
+
+**HTML report:** [postman-smoke-report.html](../../test-summaries/postman-smoke-report.html)
