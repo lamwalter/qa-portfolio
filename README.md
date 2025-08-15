@@ -30,6 +30,8 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
   - [Test Case Template](./qa-docs/test-case-template.md)
   - [Test Summary Template](./qa-docs/test-summary-template.md)
   - [Portfolio Screens (Aug 2025)](./qa-docs/portfolio-screens/2025-08/)
+  - Postman — API Smoke ([runbook](./qa-docs/postman/README.md), [collection](./qa-docs/postman/qa-portfolio-api-smoke.postman_collection.json), [env](./qa-docs/postman/jsonplaceholder-demo.postman_environment.json), [HTML report](./test-summaries/postman-smoke-report.html))
+
 
 - **Test Summaries:** [`./test-summaries/`](./test-summaries/)
   - [Login Cycle 01 (Aug 2025)](./test-summaries/2025-08-login-cycle-01.md)
@@ -69,6 +71,8 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
 - Bug Reports: **4 / 10** (target) — 🟡 in progress
 - Test Cases: **9 / 12** (target) — 🟠 building
 - Test Summary Docs: **1 / 3** — 🟥 drafted
+- API tests: 1 smoke check — ✅ committed
+
 
 ---
 
