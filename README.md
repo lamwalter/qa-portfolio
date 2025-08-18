@@ -32,6 +32,15 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
   - [Portfolio Screens (Aug 2025)](./qa-docs/portfolio-screens/2025-08/)
   - Postman — API Smoke ([runbook](./qa-docs/postman/README.md), [collection](./qa-docs/postman/qa-portfolio-api-smoke.postman_collection.json), [env](./qa-docs/postman/jsonplaceholder-demo.postman_environment.json), [HTML report](./test-summaries/postman-smoke-report.html))
 
+- **API (Postman):** `./qa-docs/postman/`  
+  - [Runbook / README](./qa-docs/postman/README.md)  
+  - Collection: [qa-portfolio-api-smoke.postman_collection.json](./qa-docs/postman/qa-portfolio-api-smoke.postman_collection.json)  
+  - Envs: [`jsonplaceholder-demo`](./qa-docs/postman/jsonplaceholder-demo.postman_environment.json)  
+  - Report (optional): [`postman-smoke-report.html`](./test-summaries/postman-smoke-report.html)
+
+- **AWS (EC2→S3):** `./qa-docs/aws/`  
+  - [README / run notes](./qa-docs/aws/README.md)  
+  - [Script: `ec2-s3-smoke.py`](./qa-docs/aws/ec2-s3-smoke.py)
 
 - **Test Summaries:** [`./test-summaries/`](./test-summaries/)
   - [Login Cycle 01 (Aug 2025)](./test-summaries/2025-08-login-cycle-01.md)
@@ -68,11 +77,11 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
 ## 📊 Progress (QA Portfolio)
 
 - Test Plan: ✅ (template committed)
-- Bug Reports: **4 / 10** (target) — 🟡 in progress
-- Test Cases: **9 / 12** (target) — 🟠 building
+- Bug Reports: **#4 / 10** (target) — 🟡 in progress
+- Test Cases: **#9 / 12** (target) — 🟠 building
 - Test Summary Docs: **1 / 3** — 🟥 drafted
-- API tests: 1 smoke check — ✅ committed
-
+- **API tests:** 1 smoke check — ✅ committed
+- **AWS tests:** 1 EC2→S3 smoke — ✅ committed
 
 ---
 
