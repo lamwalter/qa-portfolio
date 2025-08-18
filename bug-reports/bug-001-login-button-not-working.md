@@ -38,8 +38,10 @@ Nothing happens. No error message is shown. No page reload or redirect occurs.
 ---
 
 ## 🛠️ Technical Details
-- **Console Error:**  
-  `Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')`
+**Console Error:**
+```text
+Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
+
 
 ---
 
