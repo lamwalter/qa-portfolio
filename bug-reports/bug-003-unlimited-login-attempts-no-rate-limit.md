@@ -9,7 +9,7 @@
 ---
 
 ## 🧩 Summary
-Failed login attempts are not throttled or blocked. An attacker can brute-force credentials without any lockout, CAPTCHA, or 429 response.
+An attacker can brute-force credentials because there is no rate-limit, CAPTCHA, lockout window, or 429 response.
 
 ---
 
@@ -27,6 +27,7 @@ Failed login attempts are not throttled or blocked. An attacker can brute-force 
   - Further attempts are **temporarily blocked** (HTTP **429** / error).
   - Optional: “Retry-After” or similar headers are returned.
   - Account lockout window enforced (e.g., 15 minutes).
+  - Server returns Retry-After (or equivalent) when throttling is active.
 
 ---
 
@@ -48,17 +49,18 @@ Failed login attempts are not throttled or blocked. An attacker can brute-force 
 - **Network:** Multiple `POST /auth/login` requests return **200** with identical response bodies.  
 - **Headers:** No `Retry-After`, `X-RateLimit-*`, or equivalent present.  
 - **Security impact:** Brute-force risk; potential account takeover if passwords are weak.
+- **Endpoint:** POST /auth/login always returns 200 OK with the same error body.
 
 ---
 
 ## 📎 Attachments
 - Screenshot: ![BUG-003](./assets/BUG-003/bug-003.png)
-- HAR (optional): [attempts.har](./assets/BUG-003/attempts.har)
-- Notes (optional): [attempts-log.txt](./assets/BUG-003/attempts-log.txt)
-
+- HAR (optional): [`attempts.har`](./assets/BUG-003/attempts.har)
+- Notes (optional): [`attempts-log.txt`](./assets/BUG-003/attempts-log.txt)
 
 ---
 
 ## 📌 Notes
 - Related tests: `LOGIN-004` (wrong password), `LOGIN-008` (lockout).  
 - Recommend implementing server-side throttling + incremental backoff + lockout window and security audit logs.
+- Severity rationale: enables online credential-stuffing; likely compliance finding.
