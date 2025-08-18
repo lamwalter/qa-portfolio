@@ -53,8 +53,9 @@ Failed login attempts are not throttled or blocked. An attacker can brute-force 
 
 ## 📎 Attachments
 - Screenshot: ![BUG-003](./assets/BUG-003/bug-003.png)
-- HAR (optional): [`attempts.har`](./assets/BUG-003/attempts.har)
-- Notes (optional): [`attempts-log.txt`](./assets/BUG-003/attempts-log.txt)
+- HAR (optional): [attempts.har](./assets/BUG-003/attempts.har)
+- Notes (optional): [attempts-log.txt](./assets/BUG-003/attempts-log.txt)
+
 
 ---
 
