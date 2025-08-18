@@ -56,3 +56,5 @@ git commit -m "CRM-11 invalid_password_test_case.md"
 
 ## Status:
 - Pass / Fail
+
+**Related bugs:** BUG-003 (no rate-limit)
