@@ -22,7 +22,7 @@ Issue persists after hard refresh and across navigation.
 ---
 
 ## ✅ Expected Result
-Selected product appears with quantity **1** and correct name/price.
+Selected product appears in cart with quantity = 1 and correct name/price.
 
 ---
 
