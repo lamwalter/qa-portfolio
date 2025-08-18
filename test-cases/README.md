@@ -1,5 +1,7 @@
 # Test Cases Index
 
+> Goal: cover core login flow (suite LOGIN-001–012) + OAuth edge cases (LOGIN-013+).
+
 ## Summary
 **Suite:** Login Feature (LOGIN-001–012)  
 **Singles:** LOGIN-013+ (OAuth, negatives)
