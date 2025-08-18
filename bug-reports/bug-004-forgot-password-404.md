@@ -1,46 +1,45 @@
-# 🐞 Bug Report: Forgot Password link returns 404
+# 🐞 Bug Report: Forgot password link returns 404
 
 **Bug ID:** BUG-004  
-**Reported by:** Walter Lam  
+**Reported By:** Walter Lam  
 **Date:** 2025-08-13  
 **Severity:** Medium  
 **Priority:** P2
 
 ---
 
-## 🧾 Summary
-Clicking **“Forgot password?”** from the login page opens a page that returns **HTTP 404 Not Found**.
+## 📝 Summary
+Clicking **Forgot password?** on the login screen routes to a missing page and returns **404**.
 
 ---
 
-## 🧪 Steps to Reproduce
-1. Go to `/login`.
-2. Click **Forgot password?** link.
-3. Observe the page load / URL.
+## 🔄 Steps to Reproduce
+1. Open `/login`.
+2. Click **Forgot password?**.
+3. Observe the destination and result.
 
 ---
 
 ## ✅ Expected Result
-User is taken to a reset page (e.g., `/reset` or `/forgot-password`) with a form to request a reset email. Response should be **200 OK**.
+User is taken to a **Password reset** screen (HTTP **200**) containing an email input (or the flow kicks off with clear guidance).
 
 ---
 
 ## ❌ Actual Result
-Browser shows a **404 Not Found** page. No reset form is available.
+Navigation lands on a non-existent route (e.g., `/forgot`) and returns **404 Not Found**.
 
 ---
 
-## 🖥️ Environment
+## 🧭 Environment
 - **OS:** Windows 11  
-- **Browser:** Chrome 126+ (64-bit)  
-- **Device:** Desktop
+- **Browser:** Chrome 126 (64-bit)  
+- **App:** Local demo (`file:///…/manual-qa-sample/login.html`) — no public URL
 
 ---
 
-## 🛠️ Technical Details
-- **Network:** `GET /forgot` (or equivalent route) returns **404`.  
-- **Console:** No JS errors; page served with 404; missing route/handler.  
-- **Link source:** Login page anchor points to a non-existent path.
+## 🔍 Technical Details
+- Console/Network: navigation to a missing path; **404** returned.
+- No JavaScript runtime errors observed.
 
 ---
 
@@ -50,5 +49,10 @@ Browser shows a **404 Not Found** page. No reset form is available.
 
 ---
 
-## 📝 Notes
-Likely a missing route or misconfigured link. Add regression test in login suite to verify path and 200 response.
+## 🔗 Related Tests
+- `LOGIN-001–012` (Login Feature suite) — add a case to verify **Forgot password** link routes to reset.
+
+---
+
+## 🗒️ Notes
+- When server endpoints exist, add coverage for reset email request & token flow (happy/invalid token/expired).
