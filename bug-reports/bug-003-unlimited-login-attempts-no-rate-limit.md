@@ -49,7 +49,8 @@ An attacker can brute-force credentials because there is no rate-limit, CAPTCHA,
 - **Network:** Multiple `POST /auth/login` requests return **200** with identical response bodies.  
 - **Headers:** No `Retry-After`, `X-RateLimit-*`, or equivalent present.  
 - **Security impact:** Brute-force risk; potential account takeover if passwords are weak.
-- **Endpoint:** POST /auth/login always returns 200 OK with the same error body.
+- **Endpoint:** `POST /auth/login` always returns 200 with identical error body.
+
 
 ---
 
