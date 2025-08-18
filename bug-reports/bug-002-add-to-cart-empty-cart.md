@@ -10,18 +10,19 @@
 
 ## 🧩 Summary
 When clicking "Add to Cart" on a product page, the UI responds normally, but the shopping cart remains empty when accessed.
+Issue persists after hard refresh and across navigation.
 
 ---
 
 ## 🔁 Steps to Reproduce
 1. Go to `https://example.com/products/blue-jacket`
 2. Click the **Add to Cart** button
-3. Navigate to the **Cart** page via the top navigation or `/cart`
+3. Navigate to the **Cart** page via top navigation or go to /cart.
 
 ---
 
 ## ✅ Expected Result
-The selected product should appear in the shopping cart with quantity = 1.
+Selected product appears with quantity **1** and correct name/price.
 
 ---
 
@@ -42,6 +43,7 @@ The cart page is empty. No items are displayed.
   `POST /cart/add → 200 OK (no payload returned)`
 - **Storage Check:**  
   `localStorage.cart` shows `[]` (empty array)
+- No Set-Cookie/session update observed on add; localStorage.cart remains [].
 
 ---
 
@@ -52,3 +54,4 @@ The cart page is empty. No items are displayed.
 
 ## 📌 Notes
 Likely caused by missing backend session sync or failure to update cart state in local storage.
+Likely missing server-side session write or cart merge from local storage.
