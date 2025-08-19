@@ -44,6 +44,8 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
 
 - **Test Summaries:** [`./test-summaries/`](./test-summaries/)
   - [Login Cycle 01 (Aug 2025)](./test-summaries/2025-08-login-cycle-01.md)
+ 
+- **Web UI (Selenium IDE):** [`Runbook / README`](./qa-docs/selenium/README.md) · [`Suite`](./qa-docs/selenium/login-smoke.side) · [`Screens`](./qa-docs/selenium/assets/)
 
 ---
 
@@ -82,6 +84,7 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
 - Test Summary Docs: **1 / 3** — 🟥 drafted
 - **API tests:** 1 smoke check — ✅ committed
 - **AWS tests:** 1 EC2→S3 smoke — ✅ committed
+- UI tests:** 1 Selenium IDE smoke — ✅ committed
 
 ---
 
