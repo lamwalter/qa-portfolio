@@ -1,0 +1,47 @@
+{
+  "id": "c0a80101-1111-2222-3333-444444444444",
+  "version": "2.0",
+  "name": "login-smoke",
+  "url": "https://www.saucedemo.com",
+  "tests": [
+    {
+      "id": "t-login-ok",
+      "name": "SEL-001 Login success",
+      "commands": [
+        { "id": "1", "command": "open", "target": "/", "value": "" },
+        { "id": "2", "command": "type", "target": "id=user-name", "value": "standard_user" },
+        { "id": "3", "command": "type", "target": "id=password", "value": "secret_sauce" },
+        { "id": "4", "command": "click", "target": "id=login-button", "value": "" },
+        { "id": "5", "command": "waitForElementVisible", "target": "css=.title", "value": "" },
+        { "id": "6", "command": "assertText", "target": "css=.title", "value": "Products" }
+      ]
+    },
+    {
+      "id": "t-login-bad",
+      "name": "SEL-002 Login wrong password shows error",
+      "commands": [
+        { "id": "1", "command": "open", "target": "/", "value": "" },
+        { "id": "2", "command": "type", "target": "id=user-name", "value": "standard_user" },
+        { "id": "3", "command": "type", "target": "id=password", "value": "wrongpass" },
+        { "id": "4", "command": "click", "target": "id=login-button", "value": "" },
+        { "id": "5", "command": "waitForElementVisible", "target": "css=[data-test=\"error\"]", "value": "" },
+        { "id": "6", "command": "assertText", "target": "css=[data-test=\"error\"]", "value": "Epic sadface: Username and password do not match any user in this service" }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "suite-smoke",
+      "name": "Smoke",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 30000,
+      "tests": [
+        { "id": "t-login-ok" },
+        { "id": "t-login-bad" }
+      ]
+    }
+  ],
+  "urls": ["https://www.saucedemo.com"],
+  "plugins": []
+}
