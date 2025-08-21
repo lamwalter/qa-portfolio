@@ -44,6 +44,8 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
 
 - **Test Summaries:** [`./test-summaries/`](./test-summaries/)
   - [Login Cycle 01 (Aug 2025)](./test-summaries/2025-08-login-cycle-01.md)
+  - [Selenium IDE – Login Smoke](./test-summaries/selenium-ide-login-smoke.md)
+
  
 - **Web UI (Selenium IDE):** [`Runbook / README`](./qa-docs/selenium/README.md) · [`Suite`](./qa-docs/selenium/login-smoke.side) · [`Screens`](./qa-docs/selenium/assets/)
 
