@@ -5,7 +5,7 @@
 **Base URL:** https://www.saucedemo.com
 
 ## Results
-- **SEL-001 Login success** — ✅ Passed (landed on Products page; `.inventory_list` visible)
+- **SEL-001 Login success** — ✅ Passed (landed on Products page `.inventory_list` visible)
 - **SEL-002 Login wrong password shows error** — ✅ Passed (`h3[data-test="error"]` visible)
 
 ## Screens
