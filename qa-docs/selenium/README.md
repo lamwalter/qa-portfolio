@@ -1,96 +1,51 @@
 # Selenium IDE — Login Smoke
 
-Quick UI smoke for the SauceDemo site.
-
-**Demo site:** SauceDemo → `{{baseUrl}}` = https://www.saucedemo.com
-
----
+**Demo site:** SauceDemo → `https://www.saucedemo.com`
 
 ## Files in this folder
+- **Suite:** `login-smoke.side`
+- **Screens:** `assets/login-page.png`, `assets/login-success.png`, `assets/login-error.png`
 
-- **Suite:** [`login-smoke.side`](./login-smoke.side)
-- **Screens (PNG):** [`assets/`](./assets/)
-  - `login-page.png`  – before login
-  - `login-success.png` – after valid login
-  - `login-error.png`   – after invalid password
-- (This README)
+## Prereqs (GUI)
+- Firefox + **Selenium IDE** add-on (recommended).  
+  *Chrome note:* the original IDE extension is deprecated on Chrome; Firefox IDE works reliably.
 
----
+## How to run (GUI / Firefox)
+1) Open **Selenium IDE** → **File ▸ Open** → select `qa-docs/selenium/login-smoke.side`.
+2) Set **Project base URL** to `https://www.saucedemo.com`.
+3) In the top-left, open the **▼** dropdown next to the run button and choose **“login-smoke”** (the test suite).
+4) Click **Run** (▶).  
+   - **SEL-001**: logs in with valid creds and lands on the **Products** page.  
+   - **SEL-002**: logs in with invalid password and shows the red **“Epic sadface…”** error.
 
-## Tests
+### Capturing screenshots (for the repo)
+- `assets/login-page.png` – before login (form visible).
+- `assets/login-success.png` – after valid login (inventory list visible).
+- `assets/login-error.png` – after invalid login (red error banner visible).
 
-**SEL-001 – Login success (valid creds)**  
-Asserts we land on the inventory page.
-
-- open `/`
-- type `id=user-name` → `standard_user`
-- type `id=password` → `secret_sauce`
-- click `id=login-button`
-- waitForElementVisible `css=.inventory_list` (5000)
-- assertText `css=span.title` → `Products`
-
-**SEL-002 – Login error (bad password)**  
-Asserts the red error banner is shown.
-
-- open `/`
-- type `id=user-name` → `standard_user`
-- type `id=password` → `wrongpass`
-- click `id=login-button`
-- waitForElementVisible `css=[data-test="error"]` (5000)
-- assertText `css=[data-test="error"]` →  
-  `Epic sadface: Username and password do not match any user in this service`
-
----
-
-## How to run (Firefox)
-
-> Chrome has removed the IDE from the Web Store; Firefox still supports it.
-
-1) Install **Selenium IDE** (Firefox Add-ons).  
-2) Open the IDE → **File ▸ Open project…** → select `login-smoke.side`.  
-3) Set **Playback base URL** (top bar) → `https://www.saucedemo.com`.  
-4) Left sidebar: click **Test Suites** (stack icon) → select **Smoke** → ▶ Run.  
-   - Or run a single test by selecting it in **Tests** and pressing ▶.
-
----
-
-## Screenshots for the repo
-
-Take these three and save them into `qa-docs/selenium/assets/`:
-
-- `login-page.png` – fresh login page
-- `login-success.png` – inventory page visible
-- `login-error.png` – red banner after bad password
-
-Tips:
-- **Windows:** `Win` + `Shift` + `S` → Rectangle snip → Save.  
-- **macOS:** `Cmd` + `Shift` + `4` → Drag → Save.  
-- Selenium IDE’s `saveScreenshot` (if used) saves to your **Downloads** folder; rename/move into `qa-docs/selenium/assets/` with the filenames above.
-
----
+> Tip (Windows): **Win+Shift+S** → Rectangle snip → Save.  
+> Tip (Mac): **⌘+Shift+4**.
 
 ## Locators (cheat sheet)
-
 - Username: `id=user-name`  
 - Password: `id=password`  
 - Login button: `id=login-button`  
-- Success marker: `css=.inventory_list` (list present)  
-- Title text: `css=span.title` → `Products`  
-- Error banner: `css=[data-test="error"]`
+- Success marker: `css=.inventory_list`  
+- Error message: `css=h3[data-test="error"]`
+
+## Troubleshooting
+- **Blank window** after clicking *Test Suites*: close the IDE window and reopen the `.side` file.
+- **“Unknown file was received”**: ensure the file extension is exactly `.side` (not downloaded as `.json`).
+- Flaky timing? Increase waits or replace `assert*` with `verify*` on non-critical checks.
 
 ---
 
-## Notes / Troubleshooting
+## (Optional) Run from terminal
+> CLI is optional; IDE GUI is enough for this portfolio.
 
-- Valid demo creds: **`standard_user` / `secret_sauce`**.  
-- If a `waitForElementVisible` step flakes, bump timeout to **5000–8000 ms**.  
-- If `assertText` is picky (whitespace/case), switch to **`verifyText`** or assert a stable **CSS** exists (`.inventory_list`).  
-- If the IDE ever opens blank or “Test Suites” view hangs, close the IDE window and reopen (`Tools ▸ Selenium IDE`).  
-- If opening the project shows “Unknown file was received”, make sure you use **File ▸ Open project…** on the `.side` file (don’t drag-drop a web link).
-
----
-
-## Commit suggestions
-
-- Initial suite: `Selenium: add IDE login smoke (README + .side)`  
-- After PNGs: `Selenium: add screenshots (login page/success/error)`
+You’ll need Node.js and Firefox. Then:
+```bash
+# one of these may work depending on your npm registry
+npx @seleniumhq/side-runner -c "browserName=firefox" qa-docs/selenium/login-smoke.side
+# or
+npx selenium-side-runner -c "browserName=firefox" qa-docs/selenium/login-smoke.side
