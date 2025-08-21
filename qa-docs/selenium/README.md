@@ -38,7 +38,7 @@
 - **“Unknown file was received”**: ensure the file extension is exactly `.side` (not downloaded as `.json`).
 - Flaky timing? Increase waits or replace `assert*` with `verify*` on non-critical checks.
 
-**Links**
+## Links
 - **Run summary:** [`Selenium IDE — Login Smoke`](../../test-summaries/selenium-ide-login-smoke.md)
 - **Portfolio map:** [`Root README`](../../README.md)
 
