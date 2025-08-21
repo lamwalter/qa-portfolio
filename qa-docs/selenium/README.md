@@ -2,9 +2,9 @@
 
 **Demo site:** SauceDemo → `https://www.saucedemo.com`
 
-## Files in this folder
-- **Suite:** `login-smoke.side`
-- **Screens:** `assets/login-page.png`, `assets/login-success.png`, `assets/login-error.png`
+**Files in this folder**
+- **Suite:** [`login-smoke.side`](./login-smoke.side)
+- **Screens:** [`assets/login-page.png`](./assets/login-page.png), [`assets/login-success.png`](./assets/login-success.png), [`assets/login-error.png`](./assets/login-error.png)
 
 ## Prereqs (GUI)
 - Firefox + **Selenium IDE** add-on (recommended).  
@@ -37,6 +37,10 @@
 - **Blank window** after clicking *Test Suites*: close the IDE window and reopen the `.side` file.
 - **“Unknown file was received”**: ensure the file extension is exactly `.side` (not downloaded as `.json`).
 - Flaky timing? Increase waits or replace `assert*` with `verify*` on non-critical checks.
+
+**Links**
+- **Run summary:** [`Selenium IDE — Login Smoke`](../../test-summaries/selenium-ide-login-smoke.md)
+- **Portfolio map:** [`Root README`](../../README.md)
 
 ---
 
