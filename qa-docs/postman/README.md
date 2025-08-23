@@ -2,9 +2,10 @@
 
 **Environment:** ReqRes (Demo) → `{{baseUrl}} = https://reqres.in/api`  
 
-**Requests**
-- `GET /users/2` — verify 200 + user id 2  
+### Requests
+- `GET /users/2` — verify 200 + user id 2
 - `POST /users` — verify 201 + `id` + `createdAt`
+- `POST /api/login` (AUTH-001) — send only `email`; expect **400** and an error message (handles JSON and proxy/non-JSON bodies)
 
 **How to run**
 1. Import the environment and collection into Postman.
