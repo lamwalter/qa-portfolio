@@ -1,69 +1,179 @@
 {
-  "info": {
-    "name": "QA Portfolio — API Smoke",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "GET {{baseUrl}}/users/2",
-      "request": {
-        "method": "GET",
-        "url": {
-          "raw": "{{baseUrl}}/users/2",
-          "host": ["{{baseUrl}}"],
-          "path": ["users", "2"]
-        }
-      },
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "pm.test(\"status is 200\", () => pm.response.to.have.status(200));",
-              "pm.test(\"content-type is json\", () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
-              "pm.test(\"responds within 800ms\", () => pm.expect(pm.response.responseTime).to.be.below(800));",
-              "const json = pm.response.json();",
-              "pm.test(\"has user id 2\", () => pm.expect(json.id).to.eql(2));",
-              "pm.test(\"has name and email\", () => pm.expect(json).to.include.keys('name','email'));"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "POST {{baseUrl}}/posts",
-      "request": {
-        "method": "POST",
-        "header": [
-          { "key": "Content-Type", "value": "application/json" }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"title\": \"QA Smoke\",\n  \"body\": \"hello\",\n  \"userId\": 1\n}"
-        },
-        "url": {
-          "raw": "{{baseUrl}}/posts",
-          "host": ["{{baseUrl}}"],
-          "path": ["posts"]
-        }
-      },
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "pm.test(\"status is 201\", () => pm.response.to.have.status(201));",
-              "pm.test(\"content-type is json\", () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
-              "const json = pm.response.json();",
-              "pm.test(\"returns id (number)\", () => pm.expect(json.id).to.be.a('number'));",
-              "pm.test(\"echoes title\", () => pm.expect(json.title).to.eql('QA Smoke'));"
-            ]
-          }
-        }
-      ]
-    }
-  ],
-  "variable": []
+	"info": {
+		"_postman_id": "4160ee12-ac7c-4fca-891f-8d5d5e6d96f6",
+		"name": "QA Portfolio — API Smoke",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46543796",
+		"_collection_link": "https://walter-6249800.postman.co/workspace/Walter's-Workspace~e7c5da14-6233-433c-80ad-9c4f41dac186/collection/46543796-4160ee12-ac7c-4fca-891f-8d5d5e6d96f6?action=share&source=collection_link&creator=46543796"
+	},
+	"item": [
+		{
+			"name": "GET {{baseUrl}}/users/2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"status is 200\", () => pm.response.to.have.status(200));",
+							"pm.test(\"content-type is json\", () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+							"pm.test(\"responds within 800ms\", () => pm.expect(pm.response.responseTime).to.be.below(800));",
+							"const json = pm.response.json();",
+							"pm.test(\"has user id 2\", () => pm.expect(json.id).to.eql(2));",
+							"pm.test(\"has name and email\", () => pm.expect(json).to.include.keys('name','email'));"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users/2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST {{baseUrl}}/posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"status is 201\", () => pm.response.to.have.status(201));",
+							"pm.test(\"content-type is json\", () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+							"const json = pm.response.json();",
+							"pm.test(\"returns id (number)\", () => pm.expect(json.id).to.be.a('number'));",
+							"pm.test(\"echoes title\", () => pm.expect(json.title).to.eql('QA Smoke'));"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"QA Smoke\",\n  \"body\": \"hello\",\n  \"userId\": 1\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/posts",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "AUTH-001: Login missing password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Accept ReqRes 400 (expected) or a proxy/WAF 401/400\r",
+							"pm.test('status is 400 or 401', () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([400, 401]);\r",
+							"});\r",
+							"\r",
+							"// Inspect content type\r",
+							"const ct = (pm.response.headers.get('Content-Type') || '').toLowerCase();\r",
+							"console.log('CT:', ct);\r",
+							"\r",
+							"// If JSON, assert the exact error; if not JSON, just assert we got a body (proxy HTML)\r",
+							"if (ct.includes('application/json')) {\r",
+							"  let data = {};\r",
+							"  try { data = pm.response.json(); } catch(e) { /* fall through */ }\r",
+							"  const msg = String(data.error || data.message || '').toLowerCase();\r",
+							"  pm.test('error mentions missing password', () => {\r",
+							"    pm.expect(msg).to.include('missing password');  // ReqRes specific\r",
+							"  });\r",
+							"} else {\r",
+							"  const text = pm.response.text() || '';\r",
+							"  console.log('Body (head):', text.slice(0,120));\r",
+							"  pm.test('non-JSON error body received (proxy/WAF)', () => {\r",
+							"    pm.expect(text.length).to.be.greaterThan(0);\r",
+							"  });\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"packages": {},
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-length": true,
+					"host": true,
+					"user-agent": true,
+					"accept": true,
+					"accept-encoding": true,
+					"connection": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"email\": \"eve.holt@reqres.in\" }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/login",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
 }
