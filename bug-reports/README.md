@@ -15,6 +15,7 @@
 - **Severity:** Blocker > Critical > High > Medium > Low  
 - **Priority:** P0 (immediate) … P3 (backlog)  
 - **Template:** Use any existing bug file as a base, or create `qa-docs/bug-report-template.md`.
+- **Attachments:** Screenshots are stored under `bug-reports/assets/BUG-###/bug-###.png` (plus any optional HAR/log files).
 
 ## How to add a new bug
 1. Create `bug-reports/bug-XXX-short-title.md`
