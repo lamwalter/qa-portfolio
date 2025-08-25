@@ -32,11 +32,10 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
   - [Portfolio Screens (Aug 2025)](./qa-docs/portfolio-screens/2025-08/)
   - Postman — API Smoke ([runbook](./qa-docs/postman/README.md), [collection](./qa-docs/postman/qa-portfolio-api-smoke.postman_collection.json), [env](./qa-docs/postman/jsonplaceholder-demo.postman_environment.json), [HTML report](./test-summaries/postman-smoke-report.html))
 
-- **API (Postman):** `./qa-docs/postman/`  
-  - [Runbook / README](./qa-docs/postman/README.md)  
-  - Collection: [qa-portfolio-api-smoke.postman_collection.json](./qa-docs/postman/qa-portfolio-api-smoke.postman_collection.json)  
-  - Envs: [`jsonplaceholder-demo`](./qa-docs/postman/jsonplaceholder-demo.postman_environment.json)  
-  - Report (optional): [`postman-smoke-report.html`](./test-summaries/postman-smoke-report.html)
+- **API (Postman):** [`README`](./qa-docs/postman/README.md)
+  - [`Collection`](./qa-docs/postman/qa-portfolio-api-smoke.postman_collection.json)
+  - [`Env (jsonplaceholder-demo)`](./qa-docs/postman/jsonplaceholder-demo.postman_environment.json)
+  - [`Env (reqres-demo)`](./qa-docs/postman/reqres-demo.postman_environment.json)
 
 - **AWS (EC2→S3):** `./qa-docs/aws/`  
   - [README / run notes](./qa-docs/aws/README.md)  
@@ -47,7 +46,9 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
   - [Selenium IDE – Login Smoke](./test-summaries/selenium-ide-login-smoke.md)
   - [`Postman Smoke`](./test-summaries/postman-smoke-report.html)
  
-- **Web UI (Selenium IDE):** [`Runbook / README`](./qa-docs/selenium/README.md) · [`Suite`](./qa-docs/selenium/login-smoke.side) · [`Screens`](./qa-docs/selenium/assets/)
+- **Web UI (Selenium IDE):** [`Runbook / README`](./qa-docs/selenium/README.md)
+  [`Suite`](./qa-docs/selenium/login-smoke.side)
+  [`Screens`](./qa-docs/selenium/assets/)
 
 ---
 
