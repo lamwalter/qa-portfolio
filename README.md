@@ -37,7 +37,7 @@ Manual QA portfolio: **test plans, test cases, and bug reports** stored in GitHu
   - [`Env (jsonplaceholder-demo)`](./qa-docs/postman/jsonplaceholder-demo.postman_environment.json)
   - [`Env (reqres-demo)`](./qa-docs/postman/reqres-demo.postman_environment.json)
 
-- **AWS (EC2→S3):** (./qa-docs/aws/)  
+- **AWS (EC2→S3):** ['./aws/.'](./qa-docs/aws/)  
   - [README / run notes](./qa-docs/aws/README.md)  
   - [Script: `ec2-s3-smoke.py`](./qa-docs/aws/ec2-s3-smoke.py)
 
