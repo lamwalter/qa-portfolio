@@ -1,7 +1,7 @@
 # Bug Reports Index
 
 ## Summary
-- **Total:** 2 · **Open:** 2 · **Closed:** 0
+- **Total:** 4 · **Open:** 4 · **Closed:** 0
 
 ## List
 | ID      | Title                                                                 | Status | Severity | Priority | Date       |
